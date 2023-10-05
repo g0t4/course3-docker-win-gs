@@ -1,0 +1,5 @@
+services:
+  server:
+    image: jetbrains/teamcity-server
+    ports:
+      - "8111:8111"
