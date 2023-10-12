@@ -6,3 +6,7 @@ services:
     environment:
       ACCEPT_EULA: Y
       MSSQL_SA_PASSWORD: "wordpass@!"
+
+
+# versus:
+# docker container run -i -t --rm -p 1433:1433 -e ACCEPT_EULA=Y -e MSSQL_SA_PASSWORD='wordpass@!' mcr.microsoft.com/mssql/server:2022-latest
