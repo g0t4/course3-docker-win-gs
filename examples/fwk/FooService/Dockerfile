@@ -5,7 +5,9 @@ WORKDIR /app
 COPY . .
 RUN msbuild /p:Configuration=Release
 
+
+
 FROM mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-ltsc2022 AS prod-machine
 WORKDIR /app
-COPY --from=build /app/bin/Release .
+COPY --from=build-machine /app/bin/Release .
 ENTRYPOINT FooService.exe
