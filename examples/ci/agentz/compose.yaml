@@ -1,0 +1,18 @@
+services:
+  server:
+    image: jetbrains/teamcity-server
+    ports:
+      - '8111:8111'
+
+  # possibly => copy paste in and re-run up to create these too! that would be a neat way to introduce this
+  agent1:
+    image: jetbrains/teamcity-agent
+    environment:
+      SERVER_URL: http://server:8111
+
+  agent2:
+    image: jetbrains/teamcity-minimal-agent
+    environment:
+      SERVER_URL: http://server:8111
+
+# share docs: https://docs.docker.com/compose/compose-file/03-compose-file/
